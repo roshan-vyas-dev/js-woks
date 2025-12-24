@@ -45,8 +45,15 @@ var foods=["dosa","idli","puttu","dosa"];
 
 // slice(value)
 
-let portion=foods.slice(0,3);
-console.log(portion);
+// let portion=foods.slice(0,3);
+// console.log(portion);
 
+// splice(strt,dlt count,)
+
+// foods.splice(1,2);
+// console.log(foods);
+
+foods.splice(1,1,"alfaham") // we can use 3rd parameter for added  from where is delete 
+console.log(foods);
 
 
