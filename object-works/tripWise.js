@@ -8,10 +8,10 @@ var expenses = {
     thushar: 1500
 }
 
-var total=0;
+var total = 0;
 
-for(let key in expenses){
-    total+=expenses[key]
+for (let key in expenses) {
+    total += expenses[key]
 }
 
 // console.log(total);
@@ -45,19 +45,18 @@ for (let key in expenses) {
 
 // split
 
-let split=total/Object.entries(expenses).length;  // object.entries() covert object to array
+let split = total / Object.entries(expenses).length;  // object.entries() covert object to array
 
-console.log("one person split is:",split);
+console.log("one person split is:", split);
 
 
 // 
 
-let splitWise={}
+let splitWise = {}
 
-for(let user in expenses){
-    let amount=expenses[user];
-    splitWise[user]=split-amount;
-
+for (let user in expenses) {
+    let amount = expenses[user];
+    splitWise[user] = split - amount;
 
 }
 
