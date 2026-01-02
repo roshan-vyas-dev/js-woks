@@ -33,7 +33,7 @@ for(let t of expenses){
     }
 }
 
-console.log(paymentMethod);
+// console.log(paymentMethod);
 
 
 
