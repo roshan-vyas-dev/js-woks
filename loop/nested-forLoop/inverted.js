@@ -8,3 +8,4 @@ for (let r=1;r<=4;r++){
     console.log(pattern);
  
 }
+

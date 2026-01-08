@@ -160,35 +160,36 @@ for (let c of countries) {
 // console.log(languageCategories);
 
 // 7. List countries that have more than one language.
-let mtOneLanguage=countries.filter(c=>c.language.length>1).map(n=>n.name);
+let mtOneLanguage = countries.filter(c => c.language.length > 1).map(n => n.name);
 // console.log(mtOneLanguage);
 
 // 8. Find the average population of all countries.
-let sums=countries.reduce((sum,p)=>sum+p.population,0);
+let sums = countries.reduce((sum, p) => sum + p.population, 0);
 
-let averagePopulation=sums/countries.length;
+let averagePopulation = sums / countries.length;
 // console.log(averagePopulation);
 
 // 9. List all countries that use "EUR" as their currency.
-let eurCurrency=countries.filter(c=>c.currency.toLowerCase()=="eur").map(c=>c.name);
+let eurCurrency = countries.filter(c => c.currency.toLowerCase() == "eur").map(c => c.name);
 // console.log(eurCurrency);
 
 
 // 10. Find the country with the highest number of border-sharing countries.
-let borderShareHighes=countries.reduce((b1,b2)=>b1.borders.length>b2.borders.length?b1:b2).name;
+let borderShareHighes = countries.reduce((b1, b2) => b1.borders.length > b2.borders.length ? b1 : b2).name;
 console.log(borderShareHighes);
 
 
 
 
 // 11. Find the country with the lowest population.
-let lowestPopulation=countries.reduce((c1,c2)=>c1.population>c2.population?c2:c1).name;
+let lowestPopulation = countries.reduce((c1, c2) => c1.population > c2.population ? c2 : c1).name;
 // console.log(lowestPopulation);
 
 // 12. List all countries that have no border-sharing countries.
-let noBorder=countries.filter(c=>c.borders=="").map(c=>c.name);
+let noBorder = countries.filter(c => c.borders == "").map(c => c.name);
 // console.log(noBorder);
 
 // 13. Sort the countries by population in ascending order.
-let populationAsce=countries.sort((p1,p2)=>p1.population-p2.population).map(n=>n.name);
+let populationAsce = countries.sort((p1, p2) => p1.population - p2.population).map(n => n.name);
 // console.log(populationAsce);
+
