@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 1. parentNode: returns the parent node of a parent -->
+    <div class="parent">
+        <div id="child">tylor</div>
+    </div>
+
+
+    <!-- 2. child modes: Return the nodelist of an element -->
+
+
+    <ul id="divment">
+        <li>child</li>
+        <li>child</li>
+        <li>child</li>
+        <li>child</li>
+    </ul>
+
+    <!-- 3. innerHTML: set a content to html DOM -->
+
+    <div id="element">
+        <h1>Web Developer</h1>
+         
+    </div>
+
+    <!-- 4. textContent: sets a text content to html dom -->
+     <div id="text">
+        <h1>Web Developer</h1>
+
+     </div>
+
+
+    <script>
+        // 1
+
+        const childElement = document.getElementById('child');
+        console.log(childElement);
+
+        const parentElement = childElement.parentNode;
+        console.log(parentElement);
+
+        // 2
+
+        const listElements = document.getElementById('divment');
+        console.log(listElements);
+
+        const childElmt = listElements.childNodes;
+        console.log(childElmt);
+
+        // 3
+        const divElmt=document.getElementById('element');
+        console.log(divElmt);
+
+       
+        divElmt.innerHTML = ' <h1>Luminar Technolab</h1>  '
+        divElmt.style.color="blue";
+        // 4
+
+        const textElmt=document.getElementById('text');
+        console.log(textElmt);
+        textElmt.textContent='Mearn Stack Developer'
+        
+
+        
+        
+
+    </script>
+
+</body>
+
+</html>

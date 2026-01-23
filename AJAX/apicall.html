@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-cyan-900">
+    <div class=" w-full h-screen flex flex-col   ">
+
+        <h1 class="text-3xl text-center font-semibold mt-5 ">ToDo Data</h1>
+
+        <table class="w-1/2 mx-auto mt-5">
+            <thead>
+                <tr>
+                    <th class="border border-black px-5">userId</th>
+                    <th class="border border-black px-10">id</th>
+                    <th class="border border-black ">title</th>
+                    <th class="border border-black px-5">completed</th>
+                </tr>
+            </thead>
+
+            <tbody id="result">
+
+
+
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+</body>
+
+<script>
+    // AJAX API CALL
+    // 1.create a new XMLHttpReques()
+
+    const response = new XMLHttpRequest()
+
+    // 2.connect api call
+    response.open('get', 'https://jsonplaceholder.typicode.com/todos');
+
+    // 3.send
+
+    response.send();
+
+    // 4.set onreadyStateChange
+
+    response.onreadystatechange = () => {
+        if (response.readyState == 4) {
+            if (response.status > 199 && response.status < 300) {
+                // console.log(response.responseText);
+                const todoArray = JSON.parse(response.responseText);
+                console.log(todoArray);
+                displayData(todoArray)
+
+
+            }
+        }
+    }
+
+    // 5.display array of data into the browser
+
+    function displayData(todoArray) {
+        for (let todo of todoArray) {
+            htmlData = `
+             <tr class="text-center">
+                    <td class="border border-black">${todo.userId}</td>
+                    <td class="border border-black">${todo.id}</td>
+                    <td class="border border-black">${todo.title}</td>
+                    <td class="border border-black">${todo.completed}</td>
+                </tr> 
+            `
+            result.innerHTML += htmlData;
+        }
+    }
+
+</script>
+
+</html>

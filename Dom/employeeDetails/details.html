@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-cyan-200">
+
+    <div class="min-h-screen w-full">
+        <!-- welcome and logout -->
+        <div class="flex justify-between p-10 ">
+            <h1 id="head1" class="text-4xl font-bold">Welcome</h1>
+            <button onclick="logOut()"
+                class="text-2xl font-bold border px-3 py-2 rounded-lg bg-red-500 text-white">logout</button>
+
+        </div>
+
+        <!-- form employeeDetails -->
+
+        <div>
+            <h1 class="text-center my-3 text-3xl font-bold">EmployeeDetails</h1>
+
+            <div class="flex justify-between w-[60%] mx-auto mt-7">
+                <div class="flex flex-col w-[50%] space-y-4 ">
+                    <input id="empid" type="text" placeholder="Employee Id" class="border rounded-md p-2 bg-white">
+                    <input id="empName" type="text" placeholder="Employee Name" class="border rounded-md p-2 bg-white">
+                    <input id="empAddr" type="text" placeholder="Employee Address"
+                        class="border rounded-md p-2 bg-white">
+                    <input id="empDes" type="text" placeholder="Employee Designation"
+                        class="border rounded-md p-2 bg-white">
+                    <input id="empExp" type="text" placeholder="Employee Experience"
+                        class="border rounded-md p-2 bg-white">
+                    <input id="empSal" type="text" placeholder="Employee Salary" class="border rounded-md p-2 bg-white">
+                    <button class="my-2 bg-sky-500 p-2 text-white rounded-lg " onclick="addEmployees()">Add
+                        Employee</button>
+                </div>
+
+                <div class="flex flex-col w-[40%] ">
+                    <input id="emp" type="text" placeholder="Search Id" class="border rounded-md p-2 bg-white">
+                    <button onclick="searchId()" class="my-2 bg-sky-500 p-2 text-white rounded-lg w-[40%] ">Search</button>
+                    <div id="result">
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <script src="./details.js"></script>
+
+</body>
+
+</html>

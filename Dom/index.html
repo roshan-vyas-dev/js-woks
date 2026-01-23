@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+
+<body>
+    <h1 id="head">DOM MANUPULATION</h1>
+
+    <ul>
+        <li>document.getElementById("id")</li>
+        <li>document.getElementsByClassName("class")</li>
+        <li class="cls">document.getElementsByTagName("tag")</li>
+        <li>document.querySelector("cssSelector")</li>
+        <li class="cls">document.querySelectorAll("cssSelector")</li>
+    </ul>
+
+    <button class="btn" onclick="btnClick()">Submit</button>
+
+
+
+    <script>
+        // document.getElementById
+        const documentId = document.getElementById("head");
+        documentId.style.color = "blue";
+
+        // document.getElementByClassName
+        const documentClass = document.getElementsByClassName("cls");
+        console.log(documentClass);
+
+        // convert HTML collectors to array
+
+        // console.log(Array.from(documentClass));
+        // console.log(Array.from(documentClass).map(item=>item.style.color="red"));
+
+        // document .getElementByTagName()
+
+        const documentTag = document.getElementsByTagName("li");
+        console.log([...documentTag]);
+        console.log([...documentTag].map(item => item.style.color = "red"));
+
+        // document.QuerySelector();
+        const query = document.querySelector('li');
+        console.log(query);
+
+
+        // document.QuerySelectorAll();
+
+        const queryAll = document.querySelectorAll('li');
+        console.log(queryAll);
+
+        // document.QuerySelectorAll();
+
+        const queryCls = document.querySelectorAll('.cls');
+        console.log(queryCls);
+
+        function btnClick() {
+            alert("button clicked")
+        }
+
+
+    </script>
+
+</body>
+
+</html>

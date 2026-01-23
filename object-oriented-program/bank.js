@@ -3,12 +3,11 @@ create a class bank with attri(butes
 
 acno,custome_name,acc_type,balance,
 
-createacount(),
+cre
+ateacount(),
 deposit(amount),
 withdraw(amount),
 balance()
-
-
 */
 
 
@@ -39,9 +38,9 @@ class Bank {
         }
 
     }
-    balanceCheck(){
+    balanceCheck() {
         console.log(`acc n0: ${this.acno} has available balance: ${this.balance}`);
-        
+
     }
 }
 
