@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-6">
+
+  <div class="overflow-x-auto">
+    <table class="table-auto w-full border-collapse border border-gray-300 mt-4">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border border-gray-300 p-2 text-left">Id</th>
+          <th class="border border-gray-300 p-2 text-left">User Name</th>
+          <th class="border border-gray-300 p-2 text-left">Email</th>
+        </tr>
+      </thead>
+      <tbody id="result"></tbody>
+    </table>
+  </div>
+
+  <script>
+    const response = new XMLHttpRequest();
+    response.open('get', 'https://jsonplaceholder.typicode.com/users');
+    response.send();
+
+    response.onreadystatechange = () => {
+      if (response.readyState == 4) {
+        const todoArray = JSON.parse(response.responseText);
+        displayData(todoArray);
+      }
+    }
+
+    function displayData(todoArray) {
+      for (let todo of todoArray) {
+        const htmlData = `
+          <tr>
+            <td class="border border-gray-300 p-2">${todo.id}</td>
+            <td class="border border-gray-300 p-2">${todo.username}</td>
+            <td class="border border-gray-300 p-2">${todo.email}</td>
+          </tr>
+        `;
+        result.innerHTML += htmlData;
+      }
+    }
+  </script>
+
+</body>
+</html>

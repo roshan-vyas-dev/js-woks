@@ -12,7 +12,7 @@
 <body>
     <h1 class="text-3xl font-semibold mt-5 text-center">Post Details</h1>
 
-    <div id="card-container">
+    <div id="card-container" class="grid grid-cols-[repeat(3,1fr)] gap-5 px-5">
 
 
     </div>
@@ -44,8 +44,7 @@
             const cardsHtml = posts.map(post =>
 
                 `
-              <div class="mt-3 bg-red-300">
-               
+              <div class="mt-3 bg-red-200 rounded-lg p-3 shadow-lg hover:scale-102 transition ease-in-out animate-jiggle">
         <h1 class="text-lg font-bold text-center">${post.title}</h1>
         <p class="text-sm text-center">${post.body}</p>
 
